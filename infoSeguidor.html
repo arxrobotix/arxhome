@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARX Robotics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .logoRobotics img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+        .volverBoton{
+            margin-left: 15px;
+            margin-top: 15px;
+            color: #0F2E5E;
+            border: 2px solid #0F2E5E;
+            font-family: Inter, sans-serif;
+            padding: 3px 8px;
+            border-radius: 8px;
+            width: auto;
+            text-align: center;
+            font-weight: bold;
+            font-size: 10px;
+        }
+        .volverBoton:hover {
+            color: white;
+            background-color: #fb8c00;
+            border-color: #fb8c00;
+        }
+        .nombre{
+            font-weight: bold;
+            font-size: 24px;
+            color: #0F2E5E;
+            margin-bottom: 15px;
+        }
+        .titulo{
+            text-align: center;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            color: #0F2E5E;
+            font-weight: bold;
+            margin: 0 0 25px 0;
+            position: relative;
+        }
+        .titulo::after{
+            content: "";
+            position: absolute;
+            left: 46%;
+            bottom: -10px;
+            width: 120px;
+            height: 5px;
+            background-color: #0F2E5E;
+            border-radius: 10px;
+        }
+        .competencias{
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px;
+            flex-wrap: wrap;
+        }
+        .sepLine{
+            display: flex;
+            flex-wrap: wrap;
+            color: #0F2E5E;
+            background-color: #0F2E5E;
+            height: 50px;
+            width: 100%;
+        }
+        .informacion{
+            margin: 25px;
+            display: flex;
+            align-items: left;
+            justify-content: left;
+            gap: 50px;
+            max-width: 100%;
+        }
+        .informacion img{
+            height: auto;
+        }
+        .texto {
+            color: #0F2E5E;
+            font-family: Inter, sans-serif;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .separacion {
+            background-color: #fb8c00;
+            width: auto;
+            height: 5px;
+            border-radius: 2px;
+        }
+        .lista {
+            margin-left: 50px;
+        }
+        .estiloLogo {
+            color:#eaac2f;
+            text-align: center;
+            display: block;
+            font-size: 50px;
+            cursor: pointer;
+        }
+        .registro {
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <hr class="sepLine">
+    <a href="torneo.html" class="volverBoton">VOLVER</a>
+    <div class="informacion">
+        <img src="Recursos/SeguidorTorneo.jpeg">
+        <div class="texto">
+            <p>MODALIDADES</p>
+            <hr class="separacion">
+            <li class="lista">AMATEUR</li>
+            <li class="lista">PRO SIN TURBINA</li>
+            <p>INFORMACION AMATEUR</p>
+            <hr class="separacion">
+            <i class="fa-solid fa-file estiloLogo"></i>
+            <p>INFORMACION PRO SIN TURBINA</p>
+            <hr class="separacion">
+            <i class="fa-solid fa-file estiloLogo"></i>
+            <p class="registro">>REGISTRO AMATEUR<</p>
+            <hr class="separacion">
+            <p class="registro">>REGISTRO PRO SIN TURBINA<</p>
+        </div>
+    </div>
+</body>
+</html>

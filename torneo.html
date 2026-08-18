@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARX Robotics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .logoRobotics img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+        .volverBoton{
+            margin-left: 15px;
+            margin-top: 15px;
+            color: #0F2E5E;
+            border: 2px solid #0F2E5E;
+            font-family: Inter, sans-serif;
+            padding: 3px 8px;
+            border-radius: 8px;
+            width: auto;
+            text-align: center;
+            font-weight: bold;
+            font-size: 10px;
+        }
+        .volverBoton:hover {
+            color: white;
+            background-color: #fb8c00;
+            border-color: #fb8c00;
+        }
+        .nombre{
+            font-weight: bold;
+            font-size: 24px;
+            color: #0F2E5E;
+            margin-bottom: 15px;
+        }
+        .titulo{
+            text-align: center;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            color: #0F2E5E;
+            font-weight: bold;
+            margin: 0 0 25px 0;
+            position: relative;
+        }
+        .titulo::after{
+            content: "";
+
+            position: absolute;
+            left: 46%;
+            bottom: -10px;
+            width: 120px;
+            height: 5px;
+            background-color: #0F2E5E;
+            border-radius: 10px;
+        }
+        .competencias{
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px;
+            flex-wrap: wrap;
+        }
+        .sepLine{
+            display: flex;
+            flex-wrap: wrap;
+            color: #0F2E5E;
+            background-color: #0F2E5E;
+            height: 50px;
+            width: 100%;
+        }
+        /* Categorias de Torneo */
+        .categorias {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+        }
+        .categorias-fondo {
+            position: relative; /* Muy importante: sirve de ancla para la imagen y el texto */
+            width: 300px;
+            height: 200px;
+            border-radius: 12px;
+            overflow: hidden; /* Corta la imagen si sobresale de los bordes redondeados */
+            box-sizing: border-box;
+        }
+        /* La imagen cubre todo el fondo */
+        .categorias-fondo img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ajusta la imagen sin deformarla */
+            z-index: 1; /* Se queda al fondo */
+        }
+        /* El texto se posiciona sobre la imagen */
+        .categorias-fondo .contenido-texto {
+            position: relative;
+            z-index: 2; /* Se coloca por encima de la imagen */
+            width: 100%;
+            height: 100%;
+    
+            /* Alineación del texto con Flexbox */
+            display: flex;
+            flex-direction: column;
+
+            color: white;
+            box-sizing: border-box;
+            box-shadow: inset 0 -15px 150px -10px rgba(0, 0, 0, 0.9);
+        }
+
+        .modalidadSeguidor {
+            align-self: flex-end; /* Lo empuja a la derecha sin usar márgenes fijos */
+            background-color: #fb8c00;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 10px;
+            text-align: center;
+            margin-right: 5px;
+        }
+        .tituloCategorias {
+            font-weight: bold;
+            margin: 0px;
+            margin-top: 52px;
+            margin-left: 15px;
+        }
+
+        .lineaSeguidor {
+            width: 270px;           /* Largo de la línea */
+            height: 2px;           /* Grosor de la línea */
+            background-color: #fb8c00; /* Color naranja */
+            border: none;          /* Quita el estilo por defecto del <hr> */
+            margin: 2px 0;        /* Espaciado arriba y abajo */
+            border-radius: 2px;    /* Bordes redondeados para la línea */
+            margin-left: 15px;
+        }
+        .subcategorias-Seguidor-Cuadro {
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: center;
+            gap: 5px;
+        }
+        .subcategoriasSeguidor {
+            margin-left: 15px;
+            color: #fb8c00;
+            border: 2px solid #fb8c00;
+            padding: 3px 8px;
+            border-radius: 8px;
+            width: auto;
+            text-align: center;
+            font-weight: bold;
+            font-size: 9px;
+            cursor: pointer;
+        }
+        .subcategoriasSeguidor:hover{background-color: #fb8c00; color: white;}
+        .modalidadCombate {
+            align-self: flex-end;
+            background-color: #d32f2f;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 10px;
+            text-align: center;
+            margin-right: 5px;
+        }
+        .subcategoriaCombate {
+            border-color:#d32f2f; 
+            color:#d32f2f;
+        }
+        .subcategoriaCombate:hover {
+            background-color: #d32f2f;
+            color: white;
+        }
+        .subcategoriaMinisumo {
+            border-color:#43a047; 
+            color: #43a047;
+        }
+        .subcategoriaMinisumo:hover{
+            background-color: #43a047;
+            color: white;
+        }
+        .subcategoriaSumoAuto {
+            border-color: #039be5;
+            color: #039be5;
+        }
+        .subcategoriaSumoAuto:hover{
+            background-color: #039be5;
+            color: white;
+        }
+        .subcategoriaSoccer {
+            border-color: #8e24aa;
+            color: #8e24aa;
+        }
+        .subcategoriaSoccer:hover{
+            background-color: #8e24aa;
+            color: white;
+        }
+        .ContenedorPuntos {
+            width: auto;           /* Largo de la línea */
+            height: 200px;           /* Grosor de la línea */
+            background-color: #0F2E5E; /* Color naranja */
+            border: none;          /* Quita el estilo por defecto del <hr> */
+            margin: 2px 0;        /* Espaciado arriba y abajo */
+            border-radius: 10px;    /* Bordes redondeados para la línea */
+            margin: 15px;
+            margin-top: 30px;
+        }
+        .icono-trofeo {
+            color: #fb8c00;     /* Tu color naranja o amarillo dorado (#ffc107) */
+            font-size: 50px;    /* Ajusta el tamaño fácilmente */
+            transition: all 0.3s ease;
+            margin: 2px;
+        }
+        .contenido-logos {
+            width: 150px;
+            margin: 5px;
+            margin-top: 15px;
+        }
+        .barra-categorias {
+            background-color: #0F2E5E;
+            margin: 15px;
+            margin-top: 30px;
+            border-radius: 10px;
+            color: white;
+        }
+        .separador-categorias{
+            width: 2px;           /* Largo de la línea */
+            height: 120px;           /* Grosor de la línea */
+            background-color: #283593;
+            border: none;          /* Quita el estilo por defecto del <hr> */
+            margin: 2px 0;        /* Espaciado arriba y abajo */
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <hr class="sepLine">
+    <a href="index.html" class="volverBoton">VOLVER</a>
+    <!-- Troneo ARX -->
+    <div class = "oculto" id= "TorneoRobotix">
+        <p class="titulo" style="margin-top: 20px;">PRIMER TORNEO FES ARAGÓN</p>
+        <div class="competencias">
+            <p class="nombre">CATEGORÍAS DEL TORNEO</p>
+        </div>
+        <div class="categorias">
+            <div class="categorias-fondo">
+                <img src="Recursos/SeguidorLinea.jpeg">
+                <div class="contenido-texto">
+                    <p class="modalidadSeguidor">2 MODALIDADES</p>
+                    <p class="tituloCategorias">SEGUIDOR DE LÍNEA</p>
+                    <div class="subcategorias-Seguidor-Cuadro">
+                        <p class="subcategoriasSeguidor" onclick="window.open('Recursos/SeguidorAmateur.pdf','_blank')">AMATEUR</p>
+                        <p class="subcategoriasSeguidor" onclick="window.open('Recursos/SeguidorSinTurbina.pdf','_blank')">PRO SIN TURBINA</p>
+                    </div>
+                    <hr class="lineaSeguidor">
+                    <a href="infoSeguidor.html" target="_top" style="color: #fb8c00; margin-top: 5px; margin-left: 15px; font-weight: bold; font-size: 12px;">Ver detalles</a>
+                </div>
+            </div>
+
+            <div class="categorias-fondo">
+                <img src="Recursos/Combate.jpeg">
+                <div class="contenido-texto">
+                    <p class="modalidadCombate">2 MODALIDADES</p>
+                    <p class="tituloCategorias">COMBATE</p>
+                    <div class="subcategorias-Seguidor-Cuadro">
+                        <p class="subcategoriasSeguidor subcategoriaCombate" onclick="window.open('Recursos/Combate1lb.pdf','_blank')">1 libra</p>
+                        <p class="subcategoriasSeguidor subcategoriaCombate" onclick="window.open('Recursos/Combate 3D.pdf','_blank')">3D Amateur</p>
+                    </div>
+                    <hr class="lineaSeguidor" style="background-color: #d32f2f;">
+                    <p style="color: #d32f2f; margin-top: 5px; margin-left: 15px; font-weight: bold; font-size: 12px; cursor: pointer;" onclick="window.location.href='infoCombate.html'">Ver detalles</p>
+                </div>
+            </div>
+            <div class="categorias-fondo">
+                <img src="Recursos/SumoRC.jpeg">
+                <div class="contenido-texto">
+                    <p class="modalidadCombate" style= "background-color: #43a047;">2 MODALIDADES</p>
+                    <p class="tituloCategorias">MINISUMO RC</p>
+                    <div class="subcategorias-Seguidor-Cuadro">
+                        <p class="subcategoriasSeguidor subcategoriaMinisumo" onclick="window.open('Recursos/MiniRcAmateur.pdf','_blank')">AMATEUR</p>
+                        <p class="subcategoriasSeguidor subcategoriaMinisumo" onclick="window.open('Recursos/MiniRcPro.pdf','_blank')">PRO</p>
+                    </div>
+                    <hr class="lineaSeguidor" style="background-color: #43a047;">
+                    <p style="color: #43a047; margin-top: 5px; margin-left: 15px; font-weight: bold; font-size: 12px; cursor: pointer;" onclick="window.location.href='miniRC.html'">Ver detalles</p>
+                </div>
+            </div>
+        </div>
+        <div class="categorias" style="margin-top: 20px">
+            <div class="categorias-fondo">
+                <img src="Recursos/SumoAutonomo.jpeg">
+                <div class="contenido-texto">
+                    <p class="modalidadSeguidor" style="background-color: #039be5;">2 MODALIDADES</p>
+                    <p class="tituloCategorias">MINISUMO AUTÓNOMO</p>
+                    <div class="subcategorias-Seguidor-Cuadro">
+                        <p class="subcategoriasSeguidor subcategoriaSumoAuto">AMATEUR</p>
+                        <p class="subcategoriasSeguidor subcategoriaSumoAuto"> PRO</p>
+                    </div>
+                    <hr class="lineaSeguidor" style="background-color: #039be5;">
+                    <p style="color: #039be5; margin-top: 5px; margin-left: 15px; font-weight: bold; font-size: 12px; cursor: pointer;" onclick="window.location.href='miniAuto.html'">Ver detalles</p>
+                </div>
+            </div>
+
+            <div class="categorias-fondo">
+                <img src="Recursos/FutbolSoccer.jpeg">
+                <div class="contenido-texto">
+                    <p class="modalidadCombate" style="background-color: #8e24aa;">1 MODALIDAD</p>
+                    <p class="tituloCategorias">FUTBOL SOCCER</p>
+                    <div class="subcategorias-Seguidor-Cuadro">
+                        <p class="subcategoriasSeguidor subcategoriaSoccer">AMATEUR</p>
+                        <p class="subcategoriasSeguidor subcategoriaSoccer"> PRO SIN TURBINA</p>
+                    </div>
+                    <hr class="lineaSeguidor" style="background-color: #8e24aa;">
+                    <p style="color: #8e24aa; margin-top: 5px; margin-left: 15px; font-weight: bold; font-size: 12px; cursor: pointer;" onclick="window.location.href='soccer.html'">Ver detalles</p>
+                </div>
+            </div>
+            <div class="categorias-fondo">
+                <img src="Recursos/ProyectoInovacion.jpeg">
+                <div class="contenido-texto">
+                    <p class="modalidadCombate" style="background-color: #fdd835;">1 MODALIDAD</p>
+                    <p class="tituloCategorias" style="margin-top: 92px;">PROYECTO DE INNOVACIÓN</p>
+                    <hr class="lineaSeguidor" style="background-color: #fdd835;">
+                    <p style="color: #fdd835; margin-top: 5px; margin-left: 15px; font-weight: bold; font-size: 12px; cursor: pointer;" onclick="window.open('Recursos/Reglamento Innovacion.pdf','_blank')">Ver detalles</p>
+                </div>
+            </div>
+        </div>
+        <div class="categorias barra-categorias">
+            <i class="fa-solid fa-trophy icono-trofeo"></i>
+            <div class="contenido-logos">
+                <strong>Premios para los ganadores</strong>
+                <p>Reconocimientos y trofeos para los mejores</p>
+            </div>
+            <hr class="separador-categorias">
+            <i class="fa-regular fa-calendar icono-trofeo"></i>
+            <div class="contenido-logos">
+                <strong>Reglamentos actualizados</strong>
+                <p>Consulta las reglas y requisitos para cada categoría</p>
+            </div>
+            <hr class="separador-categorias">
+            <i class="fa-regular fa-user icono-trofeo"></i>
+            <div class="contenido-logos">
+                <strong>Competencia justa</strong>
+                <p>Evaluación imparcial con jueces especializados</p>
+            </div>
+            <hr class="separador-categorias">
+            <i class="fa-solid fa-shield-halved icono-trofeo"></i>
+            <div class="contenido-logos">
+                <strong>Seguridad ante todo</strong>
+                <p>Protocolos de seguridad para todos los participantes</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
