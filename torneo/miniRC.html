@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARX Robotics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            overflow-x: hidden;
+            margin: 0;
+        }
+        .logoRobotics img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+        .volverBoton{
+            margin-left: 15px;
+            margin-top: 15px;
+            color: white;
+            border: 2px solid;
+            border-left-color: #66ef6c;
+            border-bottom-color: #66ef6c;
+            border-right-color: #43a047;
+            border-top-color: #43a047;
+            font-family: Inter, sans-serif;
+            padding: 3px 8px;
+            border-radius: 8px;
+            width: auto;
+            text-align: center;
+            font-weight: bold;
+            font-size: 10px;
+            display: inline-block;
+            text-decoration: none;
+            transition: border-color 1s ease;
+        }
+        .volverBoton:hover {
+            color: white;
+            background-color: #41b446;
+            border-color: #41b446;
+        }
+        .nombre{
+            font-weight: bold;
+            font-size: 24px;
+            color: #0F2E5E;
+            margin-bottom: 15px;
+        }
+        .competencias{
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px;
+            flex-wrap: wrap;
+        }
+        .sepLine{
+            display: flex;
+            flex-wrap: wrap;
+            color: #66ef6c;
+            background-color: #66ef6c;
+            height: 50px;
+            width: 100%;
+        }
+        .informacion{
+            margin: 25px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: left;
+            gap: 50px;
+            max-width: 100%;
+            flex-wrap: wrap;
+        }
+        .informacion img{
+            height: auto;
+        }
+        .texto {
+            color: #5a0101;
+            font-family: Inter, sans-serif;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .separacion {
+            background-color: #66ef6c;
+            width: auto;
+            height: 2px;
+            border-radius: 2px;
+            border: none;
+        }
+        .lista {
+            margin-left: 50px;
+        }
+        .estiloLogo {
+            color:#ff0000;
+            text-align: center;
+            display: block;
+            font-size: 50px;
+            cursor: pointer;
+        }
+        .registro {
+            text-align: center;
+            cursor: pointer;
+        }
+        .fondo {
+            background-color: #43a047;
+            background: linear-gradient(
+                to bottom,
+                #154617 0%,
+                #154617 40%,
+                #43a047 50%,
+                #43a047 100%
+            );
+            padding: 20px;
+            border: 5px solid rgb(213, 255, 215);
+        }
+        .contenido {
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            text-align: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .logotipo {
+            font-size: 26px;
+            padding: 20px;
+        }
+        .hexagon {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            min-width: 60px;
+            background: #49eb77;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hexagon::before {
+            content: "";
+            position: absolute;
+            top: 4px;
+            left: 7px;
+            width: calc(100% - 8px);
+            height: calc(100% - 8px);
+            background: #154617;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }   
+        .hexagon-logo {
+            position: relative;
+            z-index: 1;
+            width: 60%;
+            height: auto;
+            margin-right: 100%;
+        }
+        .titulos {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .botones {
+            display: flex;
+            width: 395px;
+            max-width: 100%;
+            height: auto;
+            color: white;
+            font-weight: bold;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            gap: 20px;
+            border: 2px solid;
+            border-left-color: #66ef6c;
+            border-bottom-color: #66ef6c;
+            border-right-color: #43a047;
+            border-top-color: #43a047;
+            border-radius: 8px;
+            transition: background-color 0.5s ease, border-color 0.5s ease;
+            box-shadow: 0px 0px 10px rgb(0, 0, 0);
+            text-decoration: none;
+        }
+        .botones:hover {
+            background-color: #006e06;
+            border-color: #a5ffaa;
+        }
+        .botones-logo {
+            color: #49eb77;
+            font-size: 25px;
+        }
+        .contenidoBotones {
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+            flex-wrap: wrap;
+        }
+        .botonesInformacion{
+            width: 800px;
+            max-width: 100%;
+            margin-top: 20px;
+            font-size: 22px;
+        }
+        .botonesInformacion-logo{
+            border: 2px solid #62dc57;
+            border-bottom-color: #0b5d19;
+            padding: 25px;
+            font-size: 90px;
+            border-radius: 100%;
+            margin-right: 50px;
+        }
+        .botonesInformacion-texto{
+            font-weight: 100;
+            font-size: 15px;
+        }
+        .verPDF{
+            color: white;
+            border: 2px solid #b4ca24;
+            background-color: #b4ca24;
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 50px;
+            margin-left: 40px;
+            transition: background-color 0.5s ease, border-color 0.5s ease;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+        }
+        .verPDF:hover{
+            background-color: #f5e100;
+            border-color: #f5e100;
+        }
+        .registroAmateur{
+            width:800px;
+            max-width: 100%;
+            margin-top:20px;
+            border-color:#c0c31c; 
+            background-color:#babd00;
+            transition: background-color 0.5s ease, border-color 0.5s ease;
+        }
+        .registroPro {
+            width:800px;
+            max-width: 100%;
+            margin-top:20px;
+            border-color:#0d1e5d; 
+            background-color:#0d1e5d;
+            transition: background-color 0.5s ease, border-color 0.5s ease;
+        }
+        .registroPro:hover{
+            border-color:#3c61e4; 
+            background-color:#3c61e4;
+        }
+        .registroAmateur:hover{
+            background-color: #c86e00;
+            border-color: #ffae4c;
+        }
+
+        .inscripciones-logo{
+            font-size: 50px;
+            margin-right: 125px;
+        }
+        .contenedorImagen {
+            position: relative;
+            width: auto;
+            height: auto;
+            background: rgb(148, 0, 0);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            align-items: center;
+            justify-content: center;
+            max-width: 100%;
+            flex: 1 1 320px;
+        }
+
+        .contenedorImagen::before {
+            content: "";
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: calc(100% - 20px);
+            height: calc(100% - 20px);
+            background: rgb(148, 0, 0);
+            clip-path: polygon(0% 0%, 100% 0%, 80% 50%, 100% 100%, 0% 100%, 20% 50%);
+        }
+        .imagen-hexagon {
+            position: relative;
+            z-index: 1;
+            width: 90%;
+            height: 90%;
+            margin-left: 15px;
+        }
+        .titulo{
+            margin-left: 15px;
+            margin-top: 15px;
+            color: white;
+            border: 5px solid;
+            border-left-color: #154617;
+            border-bottom-color: #66ef6c;
+            border-right-color: #154617;
+            border-top-color: #154617;
+            font-family: Inter, sans-serif;
+            padding: 15px;
+            border-radius: 8px;
+            width: auto;
+            height:150px;
+            text-align: left;
+            font-weight: bold;
+            font-size: 50px;
+            display: flex;
+            align-items: center;
+        }
+        .titulo p {
+            margin: 0;
+        }
+        .verPDF-texto{
+            margin-left:80px;
+        }
+        .verPDF-texto2{
+            margin-left:100px;
+        }
+
+        /* ===== RESPONSIVE: Tablets ===== */
+        @media (max-width: 992px) {
+            .informacion {
+                margin: 15px;
+                gap: 30px;
+            }
+            .titulo {
+                font-size: clamp(1.8rem, 5vw, 2.8rem);
+                height: auto;
+            }
+            .botonesInformacion-logo {
+                font-size: 60px;
+                padding: 18px;
+                margin-right: 25px !important;
+            }
+            .inscripciones-logo {
+                font-size: 40px;
+                margin-right: 60px !important;
+            }
+        }
+
+        /* ===== RESPONSIVE: Móviles ===== */
+        @media (max-width: 600px) {
+            .fondo {
+                padding: 10px;
+                border-width: 3px;
+            }
+            .titulo {
+                font-size: clamp(1.4rem, 7vw, 2rem);
+                padding: 10px;
+                margin-left: 0;
+                text-align: center;
+                justify-content: center;
+            }
+            .informacion {
+                flex-direction: column-reverse;
+                margin: 10px 0;
+                gap: 20px;
+                align-items: center;
+            }
+            .contenedorImagen {
+                width: 100%;
+            }
+            .contenido {
+                justify-content: center;
+                text-align: center;
+            }
+            .contenidoBotones {
+                flex-direction: column;
+            }
+            .botones {
+                width: 100%;
+                font-size: 14px;
+            }
+            .botonesInformacion {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px !important;
+                gap: 15px;
+            }
+            .botonesInformacion-logo {
+                margin-right: 0 !important;
+                font-size: 50px;
+                padding: 15px;
+            }
+            .botonesInformacion p {
+                margin: 4px 0;
+            }
+            .verPDF {
+                margin-left: 0 !important;
+                font-size: 30px;
+                padding: 8px;
+            }
+            .registroAmateur,
+            .registroPro {
+                flex-direction: column;
+                padding: 15px;
+                gap: 10px;
+            }
+            .inscripciones-logo {
+                margin-right: 0 !important;
+                font-size: 36px;
+            }
+            .registroAmateur p[style*="margin-left"],
+            .registroPro p[style*="margin-left"] {
+                margin-left: 0 !important;
+                display: none;
+            }
+            .hexagon {
+                width: 60px;
+                height: 60px;
+                min-width: 60px;
+            }
+            .titulos {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="fondo">
+        <a href="torneo.html" class="volverBoton">&lt;  VOLVER</a>
+        <div class="titulo">
+            <p>MINI SUMO RC</p>
+        </div>
+        <div class="informacion">
+            <div>
+                <div class="contenido">
+                    <div class="hexagon">
+                        <i class="fa-solid fa-trophy logotipo hexagon-logo"></i>
+                    </div>
+                    <p class="titulos">MODALIDADES</p>
+                </div>
+                <hr class="separacion">
+                <div class="contenidoBotones">
+                    <a href="" class="botones">
+                        <i class="fa-solid fa-user botones-logo"></i>
+                        AMATEUR
+                    </a>
+                    <a href="" class="botones">
+                        <i class="fa-solid fa-star botones-logo"></i>
+                        PRO
+                    </a>
+                </div>
+                <div class="contenidoBotones">
+                    <a href="../Recursos/MiniRcAmateur.pdf" class="botones botonesInformacion">
+                        <i class="fa-regular fa-file botonesInformacion-logo" style="margin-right:45px;"></i>
+                        <div>
+                            <p>INFORMACION AMATEUR</p>
+                            <p class="botonesInformacion-texto">Consulta las reglas, especificaciones</p>
+                            <p class="botonesInformacion-texto">y detalles de la categoría Amateur.</p>
+                        </div>
+                        <div>
+                            <i class="fa-regular fa-file verPDF" style="margin-left:80px;"></i>
+                            <p class="verPDF-texto" style="text-align: center; color: #b4ca24;">VER PDF</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="contenidoBotones">
+                    <a href="../Recursos/MiniRcPro.pdf" class="botones botonesInformacion">
+                        <i class="fa-regular fa-file botonesInformacion-logo" style="margin-right: 80px; justify-content: left;"></i>
+                        <div>
+                            <p>INFORMACION PRO</p>
+                            <p class="botonesInformacion-texto">Consulta las reglas, especificaciones</p>
+                            <p class="botonesInformacion-texto">y detalles de la categoría PRO.</p>
+                        </div>
+                        <div>
+                            <i class="fa-regular fa-file verPDF" style="margin-left:100px;"></i>
+                            <p class="verPDF-texto2" style="text-align: center; color: #b4ca24;">VER PDF</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="contenidoBotones">
+                    <a href="https://forms.gle/6mrxzPLvYyXR4Y6o8" class="botones registroAmateur">
+                        <i class="fa-solid fa-people-group inscripciones-logo" style="margin-right:150px;"></i>
+                        <div>
+                            <p style="font-size:20px;">> REGISTRO AMATEUR <</p>
+                            <p style="font-weight: 100; font-size:15px;">INCRIBE A TU EQUIPO AQUÍ</p>
+                        </div>
+                        <p style="margin-left:175px; font-size:25px;">></p>
+                    </a>
+                </div>
+                <div class="contenidoBotones">
+                    <a href="https://forms.gle/6mrxzPLvYyXR4Y6o8" class="botones registroPro">
+                        <i class="fa-solid fa-people-group inscripciones-logo" style="margin-right:180px;"></i>
+                        <div>
+                            <p style="font-size:20px;">> REGISTRO PRO <</p>
+                            <p style="font-weight: 100; font-size:15px;">INCRIBE A TU EQUIPO AQUÍ</p>
+                        </div>
+                        <p style="margin-left:200px; font-size:25px;">></p>
+                    </a>
+                </div>
+            </div>
+            <div class="contenedorImagen">
+                <img class="imagen-hexagon" src="../Recursos/miniRCCategoria.jpeg">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
