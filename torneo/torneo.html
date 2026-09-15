@@ -265,7 +265,40 @@
             justify-content: center;
             gap: 20%;
         }
-        @media(max-width:600px) {
+        .separador-cronograma{
+            width:auto;
+            height:5px;
+            border-radius: 8px;
+            background-color:#0F2E5E;
+            margin-left:2%;
+            margin-right:2%;
+            margin-top:5;
+        }
+        .cronograma{
+            width:50%;
+        }
+        .cronograma img{
+            border: 8px solid;
+            border-radius: 8px;
+            border-left-color: #fb8c00;
+            border-top-color: #d32f2f;
+            border-right-color: #8e24aa;
+            border-bottom-color: #283593;
+            width:100%;
+            padding: 5px;
+            margin:5px;
+            box-shadow: 0px 0px 10px rgb(0, 0, 0);
+        }
+        .fondo-cronograma{
+            background: linear-gradient(
+                to bottom,
+                #654ec4 0%,
+                #654ec4 40%,
+                rgb(160, 169, 232) 50%,
+                rgb(160, 169, 232) 100%
+            );
+        }
+        @media(max-width:750px) {
             
             .categorias-fondo {
                 position: relative; /* Muy importante: sirve de ancla para la imagen y el texto */
@@ -316,6 +349,9 @@
             .titulo::after{
                 left:40%;
             }
+            .cronograma{
+                width:100%;
+            }
         }
     </style>
 </head>
@@ -340,7 +376,7 @@
                         <p class="subcategoriasSeguidor" onclick="window.open('../Recursos/SeguidorSinTurbina.pdf','_blank')">PRO SIN TURBINA</p>
                     </div>
                     <hr class="lineaSeguidor">
-                    <a href="infoSeguidor.html" target="_top" style="color: #fb8c00; margin-top: 5px; margin-bottom:8px; margin-left: 15px; font-weight: bold; font-size: 12px;">Ver detalles</a>
+                    <a href="infoSeguidor.html" target="_top" style="color: #fb8c00; margin-top: 5px; margin-bottom:8px; margin-left: 15px; font-weight: bold; font-size: 12px;"> > Click para ver detalles <</a>
                 </div>
             </div>
 
@@ -355,7 +391,7 @@
                         <p class="subcategoriasSeguidor subcategoriaCombate" onclick="window.open('../Recursos/Combate 3D.pdf','_blank')">3D Amateur</p>
                     </div>
                     <hr class="lineaSeguidor" style="background-color: #d32f2f;">
-                    <p style="color: #d32f2f; margin-top: 5px; margin-left: 15px; font-weight: bold; font-size: 12px; cursor: pointer;" onclick="window.location.href='infoCombate.html'">Ver detalles</p>
+                    <p style="color: #d32f2f; margin-top: 5px; margin-left: 15px; font-weight: bold; font-size: 12px; cursor: pointer;" onclick="window.location.href='infoCombate.html'">> Click para ver detalles <</p>
                 </div>
             </div>
 
@@ -370,7 +406,7 @@
                         <p class="subcategoriasSeguidor subcategoriaMinisumo" onclick="window.open('../Recursos/MiniRcPro.pdf','_blank')">PRO</p>
                     </div>
                     <hr class="lineaSeguidor" style="background-color: #43a047;">
-                    <p style="color: #43a047; margin-top: 5px; margin-left: 15px; font-weight: bold; font-size: 12px; cursor: pointer;" onclick="window.location.href='miniRC.html'">Ver detalles</p>
+                    <p style="color: #43a047; margin-top: 5px; margin-left: 15px; font-weight: bold; font-size: 12px; cursor: pointer;" onclick="window.location.href='miniRC.html'">> Click para ver detalles <</p>
                 </div>
             </div>
         </div>
@@ -387,7 +423,7 @@
                         <a href="../Recursos/MiniAutonomoPro.pdf" class="subcategoriasSeguidor subcategoriaSumoAuto"> PRO</a>
                     </div>
                     <hr class="lineaSeguidor" style="background-color: #039be5;">
-                    <p style="color: #039be5; margin-top: 5px; margin-left: 15px; font-weight: bold; font-size: 12px; cursor: pointer;" onclick="window.location.href='miniAUTO.html'">Ver detalles</p>
+                    <p style="color: #039be5; margin-top: 5px; margin-left: 15px; font-weight: bold; font-size: 12px; cursor: pointer;" onclick="window.location.href='miniAUTO.html'">> Click para ver detalles <</p>
                 </div>
             </div>
 
@@ -402,7 +438,7 @@
                         <a href="https://forms.gle/6mrxzPLvYyXR4Y6o8" class="subcategoriasSeguidor subcategoriaSoccer">REGISTRO</a>
                     </div>
                     <hr class="lineaSeguidor" style="background-color: #8e24aa;">
-                    <p style="color: #8e24aa; margin-top: 5px; margin-left: 15px; font-weight: bold; font-size: 12px; cursor: pointer;" onclick="window.open('../Recursos/SoccerProfesional.pdf','_blank')">Ver detalles</p>
+                    <p style="color: #8e24aa; margin-top: 5px; margin-left: 15px; font-weight: bold; font-size: 12px; cursor: pointer;" onclick="window.open('../Recursos/SoccerProfesional.pdf','_blank')">> Click para ver detalles <</p>
                 </div>
             </div>
 
@@ -417,8 +453,19 @@
                         <a href="https://forms.gle/6mrxzPLvYyXR4Y6o8" class="subcategoriasSeguidor subcategoriaInnovacion"> REGISTRO </a>
                     </div>
                     <hr class="lineaSeguidor" style="background-color: #fdd835;">
-                    <p style="color: #fdd835; margin-top: 5px; margin-left: 15px; font-weight: bold; font-size: 12px; cursor: pointer;" onclick="window.open('../Recursos/Reglamento Innovacion.pdf','_blank')">Ver detalles</p>
+                    <p style="color: #fdd835; margin-top: 5px; margin-left: 15px; font-weight: bold; font-size: 12px; cursor: pointer;" onclick="window.open('../Recursos/Reglamento Innovacion.pdf','_blank')">> Click para ver detalles <</p>
                 </div>
+            </div>
+        </div>
+        <hr class="separador-cronograma">
+        <div class="competencias">
+            <p class="nombre">CRONOGRAMA DE ACTIVIDADES</p>
+        </div>
+        <div class="competencias fondo-cronograma">
+            <div class="cronograma">
+                <img src="/Recursos/Competencias/Cronograma_1.jpeg">
+                <img src="/Recursos/Competencias/Cronograma_2.jpeg">
+                <img src="/Recursos/Competencias/Cronograma_3.jpeg">
             </div>
         </div>
         
