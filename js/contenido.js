@@ -5,7 +5,7 @@ historial.forEach((contenido)=>{
 
     const contenedorImagen = document.createElement('div');
     const imagenPrincipal = document.createElement('img');
-    imagenPrincipal.src = "../Recursos/" + contenido.img;
+    imagenPrincipal.src = "Recursos/" + contenido.img;
     contenedorImagen.appendChild(imagenPrincipal);
 
     const contenedorLogosHistorial = document.createElement('div'); // ← nuevo, solo para el <ul>
@@ -21,7 +21,7 @@ historial.forEach((contenido)=>{
     function crearLinea(iconoSrc, texto) {
         const li = document.createElement('li');
         const img = document.createElement('img');
-        img.src = "../Recursos/" + iconoSrc;
+        img.src = "Recursos/" + iconoSrc;
         li.appendChild(img);
         li.appendChild(document.createTextNode(" " + texto));
         return li;
@@ -35,7 +35,7 @@ historial.forEach((contenido)=>{
 
     const enlace = document.createElement('li');
     const imgEnlace = document.createElement('img');
-    imgEnlace.src = "../Recursos/Enlace.jpeg";
+    imgEnlace.src = "Recursos/Enlace.jpeg";
     enlace.appendChild(imgEnlace);
     enlace.appendChild(document.createTextNode(" Consulta el album en: "));
 
@@ -43,7 +43,7 @@ historial.forEach((contenido)=>{
     botonEnlace.href = contenido.url;
     botonEnlace.classList.add("driveLogo");
     const imgBoton = document.createElement('img');
-    imgBoton.src = "../Recursos/driveLogo.jpeg";
+    imgBoton.src = "Recursos/driveLogo.jpeg";
     botonEnlace.appendChild(imgBoton);
     enlace.appendChild(botonEnlace);
 

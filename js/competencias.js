@@ -15,7 +15,7 @@ if(competencias.length>0){
         const fechaLimite = competencia.yearFinal * 10000 + competencia.mesFinal * 100 + competencia.diaFinal;
         const div = document.createElement('div');
         const img = document.createElement('img');
-        img.src = "../Recursos/Competencias/"+competencia.nombreImagen;
+        img.src = "Recursos/Competencias/"+competencia.nombreImagen;
         img.addEventListener('click',()=>{
             window.location.href=competencia.url;
         });
