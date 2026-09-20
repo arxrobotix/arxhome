@@ -8,7 +8,7 @@ historial.forEach((contenido)=>{
     imagenPrincipal.src = "Recursos/" + contenido.img;
     contenedorImagen.appendChild(imagenPrincipal);
 
-    const contenedorLogosHistorial = document.createElement('div'); // ← nuevo, solo para el <ul>
+    const contenedorLogosHistorial = document.createElement('div');
     contenedorLogosHistorial.classList.add("logosHistorial");
 
     const contenedorListado = document.createElement('ul');
@@ -48,8 +48,8 @@ historial.forEach((contenido)=>{
     enlace.appendChild(botonEnlace);
 
     contenedorListado.append(titulo, fecha, integrantes, prototipos, categorias, puesto, enlace);
-    contenedorLogosHistorial.appendChild(contenedorListado); // ul dentro de logosHistorial
+    contenedorLogosHistorial.appendChild(contenedorListado);
 
-    contenedorCompetencia.append(contenedorImagen, contenedorLogosHistorial); // imagen y logosHistorial como hermanos
+    contenedorCompetencia.append(contenedorImagen, contenedorLogosHistorial);
     contenedorContenido.appendChild(contenedorCompetencia);
 });
