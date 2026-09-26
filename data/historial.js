@@ -1,8 +1,18 @@
 const historial = [
     {
+        titulo:"CGC WORLD CUP 2026",
+        img:"CGC2026.jpeg",
+        url:"https://www.facebook.com/share/r/1PN5iKFt8D/",
+        fecha:"13/09/2026",
+        integrantes:"Regina lovera jerónimo, Jaime Manuel Zurita Ruiz, Hernández Cabrera Genaro Gabriel, David Bonilla, Espinoza Hernández César Omar, Morán Hernández Yaretzi Natali, Franco Martínez Moisés",
+        prototipos:"Omar Alonso Padilla - Markus, Jaime Manuel Zurita - Kraken y Berserker, Genaro Gabriel Hernández - G-Bot",
+        categorias:"Mini Sumo RC Amateur, Mini Sumo RC Profesional",
+        puesto:"Segundo lugar: Berserker, Cuartos de final: G-Bot",   
+    },
+    {
         titulo:"Torneo de Robótica MechaPantera",
         img:"MechaPantera.jpeg",
-        url:"",
+        url:"https://www.facebook.com/share/v/14pgmj5Kx5y/",
         fecha:"09/07/2026",
         integrantes:"Regina lovera jerónimo, Jaime Manuel Zurita Ruiz, Hernández Cabrera Genaro Gabriel, David Bonilla, Espinoza Hernández César Omar",
         prototipos:"Hernández Cabrera Genaro Gabriel - 5 de pastor y DDD, Regina lovera jerónimo - Neo, David  Bonilla - Tortubot",
